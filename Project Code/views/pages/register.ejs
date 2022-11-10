@@ -1,0 +1,22 @@
+<div class="col"><%- include ('../partials/message') %></div>
+<%- include ('../partials/header') %>
+<%- include ('../partials/menu') %>
+
+<main>
+    <div class="container">
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="username" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter Username" name="username" >
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="username" class="form-control" id="password" name="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+            <a href="http://localhost:3000/login">If you need to log in, click me</a>
+        </form>
+    </div>
+</main>
+
+<%- include ('../partials/footer') %>
