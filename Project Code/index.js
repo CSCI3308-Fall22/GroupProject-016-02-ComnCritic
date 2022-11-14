@@ -154,4 +154,27 @@ app.get("/logout", (req, res) => {
     req.session.destroy();
     res.render("pages/login");
 });
+/*
+app.get('/getdata', function (req, res) {
+  var query = "SELECT * FROM trails WHERE location = 'California' ORDER BY avg_rating DESC LIMIT 3" ;
+  db.any(query)
+    .then(function (rows) {
+      res.send(rows);
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+});
+
+*/
+app.get("/getMovieInfo", function (req, res) {
+    var query = "SELECT * FROM movies WHERE movie_id = $1"
+    db.any(query)
+    .then(function (rows) {
+        res.sen(rows);
+    })
+    .catch(function (err) {
+        console.log(err)
+    })
+})
 
