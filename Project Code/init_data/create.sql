@@ -19,7 +19,7 @@ CREATE TABLE movies
     movie_image VARCHAR(1000)  NOT NULL,
     duration    SMALLINT     NOT NULL,
     description    VARCHAR(100) NOT NULL,
-    skoNo       BIGINT       NOT NULL
+    skono       BIGINT       NOT NULL
 );
 
 DROP TABLE IF EXISTS reviews CASCADE;

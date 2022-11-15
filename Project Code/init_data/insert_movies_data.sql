@@ -1,4 +1,4 @@
-insert into movies (movie_id, movie_name, movie_image, duration, description, skoNo) values
+insert into movies (movie_id, movie_name, movie_image, duration, description, skono) values
 (1, 'The Shawshank Redemption', 'https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg', 2.22, '', 0),
 (2, 'The Godfather', 'https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg', 2.55, '', 0),
 (3, 'The Dark Knight', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.rottentomatoes.com%2Fm%2Fthe_dark_knight&psig=AOvVaw10nOcgikSvR_p_Ibgt4aWw&ust=1668477471884000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKjT_IzJrPsCFQAAAAAdAAAAABAD', 2.32, '', 0),

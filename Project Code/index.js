@@ -130,9 +130,10 @@ app.get('/home', (req, res) => {
 
     console.log("Home Call");
 
-    db.any(`SELECT * FROM movies`)
+    db.any(`SELECT * FROM movies ORDER BY skono desc `)
         .then((data) => {
-            console.log("Fetching Movies");
+            console.log("Fetching Movies",data);
+
             res.render("pages/home.ejs",{data: data});
         })
         .catch((err) => {
@@ -163,10 +164,34 @@ app.get("/getMovieInfo", function (req, res) {
     var query = "SELECT * FROM movies WHERE movie_id = $1"
     db.any(query)
     .then(function (rows) {
-        res.sen(rows);
+        res.send(rows);
     })
     .catch(function (err) {
         console.log(err)
     })
 })
 
+app.post("/sko", function (req, res) {
+    console.log("Sko'd");
+    db.any(`UPDATE movies SET skoNo = skoNo + 1 WHERE movie_id = $1`,[req.body.movie_id])
+        .then(function (rows) {
+            console.log("adding sko");
+
+            res.redirect("/home")
+        })
+        .catch(function (err) {
+            console.log(err)
+        })
+})
+
+app.post("/no", function (req, res) {
+    console.log("No'd");
+    db.any(`UPDATE movies SET skoNo = skoNo + -1 WHERE movie_id = $1`,[req.body.movie_id])
+        .then(function (rows) {
+            console.log("adding no");
+            res.redirect("/home")
+        })
+        .catch(function (err) {
+            console.log(err)
+        })
+})
