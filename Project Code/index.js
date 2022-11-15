@@ -126,28 +126,21 @@ const auth = (req, res, next) => {
 // Authentication Required
 app.use(auth);
 
-app.get('/discover', async (req, res) => {
+app.get('/home', (req, res) => {
 
-    console.log("discover")
-    axios({
-        url: `https://app.ticketmaster.com/discovery/v2/events.json`,
-        method: 'GET',
-        dataType:'json',
-        params: {
-            "apikey": req.session.user.api_key,
-            "keyword": "Post Malone", //you can choose any artist/event here
-            "size": 10,
-        }
-    })
-        .then(results => {
-            console.log(results.data); // the results will be displayed on the terminal if the docker containers are running
-            // Send some parameters
-            res.render("pages/discover.ejs", {results:results.data._embedded.events});
+    console.log("Home Call");
+    const query = `SELECT * FROM movies`;
+
+    db.any(query)
+        .then(() => {
+            console.log("Fetching Movies");
+            res.render("pages/home.ejs",{results: query});
         })
-        .catch(error => {
-            // Handle errors
-            res.render("pages/discover.ejs" , {results: []});
-        })
+        .catch((err) => {
+            res.locals.message = "Something Went Wrong";
+            console.log(err);
+            res.render("pages/home.ejs", {results: []});
+        });
 });
 
 app.get("/logout", (req, res) => {
