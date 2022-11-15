@@ -92,7 +92,7 @@ app.post('/login', async (req, res) => {
                 res.locals.message = "Incorrect Password";
                 console.log("Password Incorrect");
                 res.render("pages/login");
-                res.redirect("/discover");
+                res.redirect("/home");
             }
             else {
                 console.log(match);
@@ -102,7 +102,7 @@ app.post('/login', async (req, res) => {
                 };
                 req.session.save();
                 console.log("Password Correct");
-                res.redirect("/discover");
+                res.redirect("/home");
             }
         })
         .catch((err) => {
@@ -126,28 +126,21 @@ const auth = (req, res, next) => {
 // Authentication Required
 app.use(auth);
 
-app.get('/discover', async (req, res) => {
+app.get('/home', (req, res) => {
 
-    console.log("discover")
-    axios({
-        url: `https://app.ticketmaster.com/discovery/v2/events.json`,
-        method: 'GET',
-        dataType:'json',
-        params: {
-            "apikey": req.session.user.api_key,
-            "keyword": "Post Malone", //you can choose any artist/event here
-            "size": 10,
-        }
-    })
-        .then(results => {
-            console.log(results.data); // the results will be displayed on the terminal if the docker containers are running
-            // Send some parameters
-            res.render("pages/discover.ejs", {results:results.data._embedded.events});
+    console.log("Home Call");
+
+    db.any(`SELECT * FROM movies ORDER BY skono desc `)
+        .then((data) => {
+            console.log("Fetching Movies",data);
+
+            res.render("pages/home.ejs",{data: data});
         })
-        .catch(error => {
-            // Handle errors
-            res.render("pages/discover.ejs" , {results: []});
-        })
+        .catch((err) => {
+            res.locals.message = "Something Went Wrong";
+            console.log(err);
+            res.render("pages/home.ejs", {data: []});
+        });
 });
 
 app.get("/logout", (req, res) => {
@@ -171,10 +164,34 @@ app.get("/getMovieInfo", function (req, res) {
     var query = "SELECT * FROM movies WHERE movie_id = $1"
     db.any(query)
     .then(function (rows) {
-        res.sen(rows);
+        res.send(rows);
     })
     .catch(function (err) {
         console.log(err)
     })
 })
 
+app.post("/sko", function (req, res) {
+    console.log("Sko'd");
+    db.any(`UPDATE movies SET skoNo = skoNo + 1 WHERE movie_id = $1`,[req.body.movie_id])
+        .then(function (rows) {
+            console.log("adding sko");
+
+            res.redirect("/home")
+        })
+        .catch(function (err) {
+            console.log(err)
+        })
+})
+
+app.post("/no", function (req, res) {
+    console.log("No'd");
+    db.any(`UPDATE movies SET skoNo = skoNo + -1 WHERE movie_id = $1`,[req.body.movie_id])
+        .then(function (rows) {
+            console.log("adding no");
+            res.redirect("/home")
+        })
+        .catch(function (err) {
+            console.log(err)
+        })
+})

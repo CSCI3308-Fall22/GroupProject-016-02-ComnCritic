@@ -1,0 +1,50 @@
+<div class="col"><%- include ('../partials/message') %></div>
+<%- include ('../partials/header') %>
+<%- include ('../partials/menu') %>
+<style>
+    body {
+        background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Colorado_Buffaloes_logo.svg/1200px-Colorado_Buffaloes_logo.svg.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+</style>
+<main>
+    <div class="container">
+        <!-- THE REST OF YOUR HTML CODE GOES HERE -->
+        <h1 class="display-6">Home Page!</h1>
+
+        <div class="row row-cols-1 row-cols-md-4 g-4 align-items-start">
+            <% data.forEach(el => { %>
+                <div class="col">
+                    <div class="card">
+                        <h4 class="card-title text-center"><%= el.movie_name %></h4>
+                        <img src="<%= el.movie_image %>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <a class="card-text"></a>
+                            <!--                            Insert sko no buttons-->
+                            <div style="column-count: 3">
+                                <form style="margin: 0" action="/sko" method="POST">
+                                    <input type="hidden" name="movie_id" value="<%-el.movie_id%>">
+                                    <button type="submit" class="btn " style="color: black; background-color: #cdb77c">
+                                        Sko
+                                    </button>
+                                </form>
+                                <h5>Score : <%- el.skono %></h5>
+                                <form style="margin: 0" action="/no" method="POST">
+                                    <input type="hidden" name="movie_id" value="<%-el.movie_id%>">
+                                    <button type="submit" class="btn " style="color: #cdb77c ; background-color: black;object-fit: contain">
+                                        No
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+    </div>
+</main>
+
