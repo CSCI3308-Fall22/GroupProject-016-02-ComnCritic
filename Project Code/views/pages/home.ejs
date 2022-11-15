@@ -8,17 +8,18 @@
         <h1>Home Page!</h1>
         <div class="container-fluid text-center">
             <div class="row align-items-start">
-
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title"></h5>
-                            <a class="card-text"></a>
-                            //Insert sko no buttons
+                <% data.forEach(el => { %>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <h4 class="card-title"><%=el.movie_name%></h4>
+                            <img src="<%=el.movie_image%>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <a class="card-text"></a>
+                                <!--                            Insert sko no buttons-->
+                            </div>
                         </div>
                     </div>
-                </div>
+                <% }) %>
             </div>
         </div>
 

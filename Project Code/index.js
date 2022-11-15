@@ -92,7 +92,7 @@ app.post('/login', async (req, res) => {
                 res.locals.message = "Incorrect Password";
                 console.log("Password Incorrect");
                 res.render("pages/login");
-                res.redirect("/discover");
+                res.redirect("/home");
             }
             else {
                 console.log(match);
@@ -102,7 +102,7 @@ app.post('/login', async (req, res) => {
                 };
                 req.session.save();
                 console.log("Password Correct");
-                res.redirect("/discover");
+                res.redirect("/home");
             }
         })
         .catch((err) => {
@@ -129,17 +129,16 @@ app.use(auth);
 app.get('/home', (req, res) => {
 
     console.log("Home Call");
-    const query = `SELECT * FROM movies`;
 
-    db.any(query)
-        .then(() => {
+    db.any(`SELECT * FROM movies`)
+        .then((data) => {
             console.log("Fetching Movies");
-            res.render("pages/home.ejs",{results: query});
+            res.render("pages/home.ejs",{data: data});
         })
         .catch((err) => {
             res.locals.message = "Something Went Wrong";
             console.log(err);
-            res.render("pages/home.ejs", {results: []});
+            res.render("pages/home.ejs", {data: []});
         });
 });
 
