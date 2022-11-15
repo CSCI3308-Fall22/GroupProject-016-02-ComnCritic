@@ -2,32 +2,38 @@ insert into movies (movie_id, movie_name, movie_image, duration, description, sk
 (1, 'The Shawshank Redemption', 'https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg', 2.22, '', 0),
 (2, 'The Godfather', 'https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg', 2.55, '', 0),
 (3, 'The Dark Knight', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.rottentomatoes.com%2Fm%2Fthe_dark_knight&psig=AOvVaw10nOcgikSvR_p_Ibgt4aWw&ust=1668477471884000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKjT_IzJrPsCFQAAAAAdAAAAABAD', 2.32, '', 0),
-
-
 (4, 'The Godfather II', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Far.wikipedia.org%2Fwiki%2F%25D8%25A7%25D9%2584%25D8%25B9%25D8%25B1%25D8%25A7%25D8%25A8%3A_%25D8%25A7%25D9%2584%25D8%25AC%25D8%25B2%25D8%25A1_%25D8%25A7%25D9%2584%25D8%25AB%25D8%25A7%25D9%2586%25D9%258A_(%25D9%2581%25D9%258A%25D9%2584%25D9%2585)&psig=AOvVaw3t2Y01PLazFM8UBWrwCqgq&ust=1668477509208000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCMCa-qDJrPsCFQAAAAAdAAAAABAD', 3.22, '', 0),
-
 (5, '12 Angry Men', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2F12_Angry_Men_(1957_film)&psig=AOvVaw2Kqlh1CvRDP2nj2M_BJhtC&ust=1668477545730000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCIDb6rPJrPsCFQAAAAAdAAAAABAD', 1.36, '', 0),
-
 (6, 'Schindlers List', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.rottentomatoes.com%2Fm%2Fschindlers_list&psig=AOvVaw1t262LRvw-dufw5jgSUv1U&ust=1668477609426000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCMCxidHJrPsCFQAAAAAdAAAAABAD', 3.15, '', 0),
-
 (7, 'The Lord of the Rings: The Return of the King', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fsea.ign.com%2Fthe-lord-of-the-rings-the-return-of-the-king%2F166604%2Fnews%2Fthe-impact-of-the-lord-of-the-rings-the-return-of-the-king-17-years-after-its-release&psig=AOvVaw27MVWkXQyR7v2mJqNyVWYl&ust=1668477659587000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCOj-m-bJrPsCFQAAAAAdAAAAABAD', 3.21, '', 0),
-
 (8, 'Pulp Fiction', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.miramax.com%2Fmovie%2Fpulp-fiction%2F&psig=AOvVaw0hbBtH9gh8VUvnDreZA9KT&ust=1668530890333000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLjJmo2QrvsCFQAAAAAdAAAAABAD', 2.34, '', 0),
-
 (9, 'The Lord of the Rings: The Fellowship of the Ring', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt0120737%2F&psig=AOvVaw2cSd9k2LAZ1nnwXjl1AxRL&ust=1668530935069000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCMCauaiQrvsCFQAAAAAdAAAAABAF', 2.58, '', 0),
-
 (10, 'The Good, the Bad and the Ugly', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FThe_Good%2C_the_Bad_and_the_Ugly&psig=AOvVaw1cEpC4x-dijNAitx1K9_hV&ust=1668531005536000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCOD-yMWQrvsCFQAAAAAdAAAAABAD', 2.58, '', 0),
-
 (11, 'Forrest Gump', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FForrest_Gump&psig=AOvVaw2-_LDx7FAMjfeMfO2SDpEE&ust=1668531060264000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCPi149-QrvsCFQAAAAAdAAAAABAD', 2.22, '', 0),
-
 (12, 'Fight Club', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt0137523%2F&psig=AOvVaw0xKmNCj9I5hbiy8rmrgHwD&ust=1668531118862000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLC-hYCRrvsCFQAAAAAdAAAAABAD', 2.19, '', 0),
-
 (13, 'TThe Lord of the Rings: The Two Towers', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt0167261%2F&psig=AOvVaw2n1KBdWBaU5CSnh6W_xLga&ust=1668531313767000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLCukd-RrvsCFQAAAAAdAAAAABAD', 2.59, '', 0),
-
 (14, 'Inception', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.rottentomatoes.com%2Fm%2Finception&psig=AOvVaw1g3RSyrZtYWpV8Xms4vXlL&ust=1668531224727000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCPiOg62RrvsCFQAAAAAdAAAAABAD', 2.28, '', 0),
-
-(15, 'Star Wars: Episode V - The Empire Strikes Back', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt0080684%2F&psig=AOvVaw2SrlKU1FPHPSYBhAmlCdsD&ust=1668531279446000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCMC36smRrvsCFQAAAAAdAAAAABAE', 2.04, '', 0);
-
+(15, 'Star Wars: Episode V - The Empire Strikes Back', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt0080684%2F&psig=AOvVaw2SrlKU1FPHPSYBhAmlCdsD&ust=1668531279446000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCMC36smRrvsCFQAAAAAdAAAAABAE', 2.04, '', 0),
+(16, 'The Matrix', 'https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg', 136, '', 0),
+(17, 'One flew over the Cuckoo''s Nest', 'https://m.media-amazon.com/images/M/MV5BZjA0OWVhOTAtYWQxNi00YzNhLWI4ZjYtNjFjZTEyYjJlNDVlL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_QL75_UX190_CR0,0,190,281_.jpg', 133, '', 0),
+(18, 'Goodfellas', 'https://m.media-amazon.com/images/M/MV5BY2NkZjEzMDgtN2RjYy00YzM1LWI4ZmQtMjIwYjFjNmI3ZGEwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg', 145, '', 0),
+(19, 'Seven Samurai', 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Seven_Samurai_poster.jpg/1200px-Seven_Samurai_poster.jpg', 207, '', 0),
+(20, 'Se7en', 'https://m.media-amazon.com/images/M/MV5BOTUwODM5MTctZjczMi00OTk4LTg3NWUtNmVhMTAzNTNjYjcyXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_QL75_UX190_CR0,8,190,281_.jpg', 127,'' , 0),
+(21, 'City of God', 'https://m.media-amazon.com/images/M/MV5BOTMwYjc5ZmItYTFjZC00ZGQ3LTlkNTMtMjZiNTZlMWQzNzI5XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg', 130, '', 0),
+(22, 'Life Is Beautiful', 'https://m.media-amazon.com/images/M/MV5BYmJmM2Q4NmMtYThmNC00ZjRlLWEyZmItZTIwOTBlZDQ3NTQ1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg', 116, '', 0),
+(23, 'The Silence of the Lambs', 'https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_FMjpg_UX1000_.jpg', 118, '', 0),
+(24, 'Star Wars: Episode V - A New Hope', 'https://m.media-amazon.com/images/M/MV5BOTA5NjhiOTAtZWM0ZC00MWNhLThiMzEtZDFkOTk2OTU1ZDJkXkEyXkFqcGdeQXVyMTA4NDI1NTQx._V1_FMjpg_UX1000_.jpg', 121, '', 0),
+(25, 'It''s a Wonderful Life', 'https://m.media-amazon.com/images/M/MV5BZjc4NDZhZWMtNGEzYS00ZWU2LThlM2ItNTA0YzQ0OTExMTE2XkEyXkFqcGdeQXVyNjUwMzI2NzU@._V1_FMjpg_UX1000_.jpg', 130, '', 0),
+(26, 'Saving Private Ryan', 'https://m.media-amazon.com/images/M/MV5BZjhkMDM4MWItZTVjOC00ZDRhLThmYTAtM2I5NzBmNmNlMzI1XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_FMjpg_UX1000_.jpg', 169, '', 0),
+(27, 'Spirited Away', 'https://m.media-amazon.com/images/M/MV5BMjlmZmI5MDctNDE2YS00YWE0LWE5ZWItZDBhYWQ0NTcxNWRhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg', 125, '', 0),
+(28, 'The Green Mile', 'https://m.media-amazon.com/images/M/MV5BMTUxMzQyNjA5MF5BMl5BanBnXkFtZTYwOTU2NTY3._V1_FMjpg_UX1000_.jpg', 189, '', 0),
+(29, 'Léon: The Professional', 'https://m.media-amazon.com/images/M/MV5BOTgyMWQ0ZWUtN2Q2MS00NmY0LWI3OWMtNjFkMzZlNDZjNTk0XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_FMjpg_UX1000_.jpg', 110, '', 0),
+(30, 'Harakiri', 'https://m.media-amazon.com/images/M/MV5BYjBmYTQ1NjItZWU5MS00YjI0LTg2OTYtYmFkN2JkMmNiNWVkXkEyXkFqcGdeQXVyMTMxMTY0OTQ@._V1_FMjpg_UX1000_.jpg', 133, '', 0),
+(31, 'Interstellar', 'https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg', 169, '', 0),
+(32, 'The Usual Suspects', 'https://m.media-amazon.com/images/M/MV5BYTViNjMyNmUtNDFkNC00ZDRlLThmMDUtZDU2YWE4NGI2ZjVmXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_FMjpg_UX1000_.jpg', 106, '', 0),
+(33, 'The Lion King', 'https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_.jpg', 88, '', 0),
+(34, 'American History X', 'https://m.media-amazon.com/images/M/MV5BZTJhN2FkYWEtMGI0My00YWM4LWI2MjAtM2UwNjY4MTI2ZTQyXkEyXkFqcGdeQXVyNjc3MjQzNTI@._V1_FMjpg_UX1000_.jpg', 119, '', 0),
+(35, 'Back to the Future', 'https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg', 116, '', 0)
 
 
 
