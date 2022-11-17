@@ -134,7 +134,7 @@ app.get('/home', (req, res) => {
 
     console.log("Home Call");
 
-    db.any(`SELECT * FROM movies ORDER BY skono desc `)
+    db.any(`SELECT * FROM movies ORDER BY movie_id desc `)
         .then((data) => {
             console.log("Fetching Movies",data);
 
@@ -188,3 +188,20 @@ app.post("/no", function (req, res) {
             console.log(err)
         })
 })
+
+app.get('/mostSko', (req, res) => {
+
+    console.log("Most Sko'd");
+
+    db.any(`SELECT * FROM movies ORDER BY skono desc limit 3`)
+        .then((data) => {
+            console.log("Fetching Most Sko'd movies",data);
+
+            res.render("pages/trending.ejs",{data: data});
+        })
+        .catch((err) => {
+            res.locals.message = "Something Went Wrong";
+            console.log(err);
+            res.render("pages/trending.ejs", {data: []});
+        });
+});

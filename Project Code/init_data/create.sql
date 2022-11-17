@@ -18,7 +18,7 @@ CREATE TABLE movies
     movie_name  VARCHAR(50)  NOT NULL,
     movie_image VARCHAR(1000)  NOT NULL,
     duration    SMALLINT     NOT NULL,
-    description    VARCHAR(100) NOT NULL,
+    description    VARCHAR(1000) NOT NULL,
     skono       BIGINT       NOT NULL
 );
 
@@ -32,3 +32,13 @@ CREATE TABLE reviews
     FOREIGN KEY (movie_id) REFERENCES movies (movie_id),
     review_text VARCHAR(100) NOT NULL
 );
+
+DROP TABLE IF EXISTS reviews CASCADE;
+CREATE TABLE users_to_movies
+(
+    username VARCHAR(50) NOT NULL,
+    movie_id INT NOT NULL,
+    FOREIGN KEY (username) REFERENCES users (username),
+    FOREIGN KEY (movie_id) REFERENCES movies (movie_id),
+    rating INT NOT NULL
+)
