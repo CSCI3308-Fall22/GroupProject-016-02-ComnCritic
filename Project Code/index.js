@@ -61,6 +61,10 @@ app.get('/register', (req, res) => {
     res.render('pages/register.ejs');
 });
 
+app.get('/trending', (req, res) => {
+    res.render('pages/trending.ejs');
+});
+
 // Register submission
 app.post('/register', async (req, res) => {
     //the logic goes here
