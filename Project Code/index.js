@@ -205,3 +205,8 @@ app.get('/mostSko', (req, res) => {
             res.render("pages/trending.ejs", {data: []});
         });
 });
+
+
+app.get('/moviePage', (req, res) => {
+    res.render('pages/movie.ejs');
+});
