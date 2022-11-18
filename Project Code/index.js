@@ -136,7 +136,7 @@ app.get('/home', (req, res) => {
 
     db.any(`SELECT * FROM movies ORDER BY movie_id desc `)
         .then((data) => {
-            console.log("Fetching Movies",data);
+            //console.log("Fetching Movies",data);
 
             res.render("pages/home.ejs",{data: data});
         })
@@ -204,4 +204,9 @@ app.get('/mostSko', (req, res) => {
             console.log(err);
             res.render("pages/trending.ejs", {data: []});
         });
+});
+
+
+app.get('/moviePage', (req, res) => {
+    res.render('pages/movie.ejs');
 });
