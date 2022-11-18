@@ -136,7 +136,7 @@ app.get('/home', (req, res) => {
 
     db.any(`SELECT * FROM movies ORDER BY movie_id desc `)
         .then((data) => {
-            //console.log("Fetching Movies",data);
+            console.log("Fetching Movies",data);
 
             res.render("pages/home.ejs",{data: data});
         })
@@ -193,7 +193,7 @@ app.get('/mostSko', (req, res) => {
 
     console.log("Most Sko'd");
 
-    db.any(`SELECT * FROM movies ORDER BY skono desc limit 3`)
+    db.any(`SELECT * FROM movies ORDER BY skono desc limit 1`)
         .then((data) => {
             console.log("Fetching Most Sko'd movies",data);
 

@@ -9,6 +9,7 @@
     </head>
     <body>
         <div class="container">
+          <% data.forEach(el => { %>
             <div class="row">
                 <div class="col-sm-6">
                   <div class="card text-center">
@@ -16,8 +17,8 @@
                         Most Sko'd Movie
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Movie Title</h5>
-                      <p class="card-text">Movie Information</p>
+                      <h5 class="card-title"><%= el.movie_name %></h5>
+                      <img src="<%= el.movie_image %>" class="card-img-top">
                       <a href="#" class="btn btn-primary">Check Out This Movie</a>
                     </div>
                   </div>
@@ -35,6 +36,7 @@
                   </div>
                 </div>
               </div>
+          <% }) %>
         </div>
     </body>
 </main>
