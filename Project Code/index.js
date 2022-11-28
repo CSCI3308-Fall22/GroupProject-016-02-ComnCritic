@@ -154,10 +154,13 @@ app.get("/logout", (req, res) => {
 
 
 app.get("/getMovieInfo", function (req, res) {
+    const id = req.query.movie_id;
+    console.log(id)
     var query = "SELECT * FROM movies WHERE movie_id = $1"
-    db.any(query)
-    .then(function (rows) {
-        res.send(rows);
+    db.one(query,[id])
+    .then((movie) => {
+        console.log(movie.movie_id)
+        res.render('pages/movie.ejs',{data: movie})
     })
     .catch(function (err) {
         console.log(err)
