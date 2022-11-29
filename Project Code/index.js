@@ -237,6 +237,7 @@ app.post('/addReview', function (req, res)  {
                     VALUES ('${currentUser}', '${data[0].movie_id}', '${req.body.review}') returning *;`)
                 .then(function (rows)  {
                     console.log(rows)
+                    res.redirect("/home");
                 })
                 .catch((err) => {
                     res.locals.message = "Something Went Wrong";
