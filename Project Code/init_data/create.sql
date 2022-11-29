@@ -32,16 +32,17 @@ CREATE TABLE reviews
     movie_id INT NOT NULL,
     FOREIGN KEY (username) REFERENCES users (username),
     FOREIGN KEY (movie_id) REFERENCES movies (movie_id),
-    review_text VARCHAR(100) NOT NULL
+    review_text VARCHAR(1000) NOT NULL
 );
 
-DROP TABLE IF EXISTS reviews CASCADE;
+DROP TABLE IF EXISTS users_to_movies CASCADE;
 CREATE TABLE users_to_movies
 (
     username VARCHAR(50) NOT NULL,
     movie_id INT NOT NULL,
     FOREIGN KEY (username) REFERENCES users (username),
-    FOREIGN KEY (movie_id) REFERENCES movies (movie_id),
+    FOREIGN KEY (movie_id) REFERENCES movies (movie_id)
 --     Rating is being used to track if a movie is sko'd or no'd
-    rating INT NOT NULL
-)
+    --rating INT NOT NULL
+);
+
