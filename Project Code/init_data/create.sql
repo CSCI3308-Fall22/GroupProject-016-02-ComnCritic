@@ -18,6 +18,8 @@ CREATE TABLE movies
     movie_name  VARCHAR(50)  NOT NULL,
     movie_image VARCHAR(1000)  NOT NULL,
     duration    SMALLINT     NOT NULL,
+    genre VARCHAR(20) NOT NULL,
+    yearOfRelease SMALLINT NOT NULL,
     description    VARCHAR(1000) NOT NULL,
     skono       BIGINT       NOT NULL
 );

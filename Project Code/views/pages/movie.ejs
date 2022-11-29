@@ -4,17 +4,17 @@
 <main>
     <center><h1 style="color: black;"><%=data.movie_name %></h1>  <!--Query-->
         <div class="card border-dark mb-3" style="width: 24rem;">
-            <img src="<%= data.movie_image %>" class="card-img-top" alt="Movie_title"> <!--Query--> 
+            <img src="<%= data.movie_image %>" class="card-img-top" alt="<%=data.movie_name %>"> 
             <div class="d-grid gap-2 d-md-block">
                 <button class="btn btn-success" type="button">SKO</button>
-                <a><%= data.skono %></a> <!--Query-->  
+                <a><%= data.skono %></a> 
                 <button class="btn btn-danger" type="button">NO</button>
             </div>
             <div class="card-body" style="text-align: left;">
               <ul>
-                <li>Genre: data</li> <!--Query--> 
-                <li>Year of Release: data </li> <!--Query--> 
-                <li>Duration: <%= data.duration%> minutes</li> <!--Query--> 
+                <li>Genre: <%= data.genre %></li> 
+                <li>Year of Release: <%= data.yearofrelease %> </li> 
+                <li>Duration: <%= data.duration%> minutes</li> 
                 <li>Description: <%= data.description%></li>
               </ul>
             </div>
