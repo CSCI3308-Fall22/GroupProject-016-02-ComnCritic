@@ -16,6 +16,7 @@ const dbConfig = {
 };
 
 const db = pgp(dbConfig);
+var currentUser;
 
 // test your database
 db.connect()
@@ -101,6 +102,7 @@ app.post('/login', async (req, res) => {
             else {
                 console.log(match);
                 console.log("Match");
+                currentUser = req.body.username;
                 req.session.user = {
                     api_key: process.env.API_KEY,
                 };
@@ -212,5 +214,49 @@ app.get('/mostSko', (req, res) => {
             res.locals.message = "Something Went Wrong";
             console.log(err);
             res.render("pages/trending.ejs", {data: []});
+        });
+});
+
+
+
+app.get('/moviePage', (req, res) => {
+    res.render('pages/movie.ejs');
+});
+
+app.get('/review', (req, res) => {
+    res.render('pages/review.ejs');
+});
+
+app.post('/addReview', function (req, res)  {
+    console.log("trying to add a review");
+    db.any(`SELECT movie_id FROM movies WHERE movie_name = $1`,[req.body.movieName])
+        .then(function (data)  {
+            console.log("First Step");
+            console.log(data[0]);
+            db.any(`INSERT INTO reviews (username, movie_id, review_text)
+                    VALUES ('${currentUser}', '${data[0].movie_id}', '${req.body.review}') returning *;`)
+                .then(function (rows)  {
+                    console.log(rows)
+                })
+                .catch((err) => {
+                    res.locals.message = "Something Went Wrong";
+                    console.log(err);
+
+                });
+            // db.any(`INSERT INTO reviews (username,movie_id,review_text) VALUES ('${currentUser}','${data[0].movie_id}','${req.body.review}') returning *;`)
+            //     .then((rows) => {
+            //         console.log("Adding Review",rows);
+            //
+            //     })
+            //     .catch((err) => {
+            //         res.locals.message = "Something Went Wrong";
+            //         console.log(err);
+            //
+            //     });
+        })
+        .catch((err) => {
+            res.locals.message = "Something Went Wrong";
+            console.log(err);
+
         });
 });

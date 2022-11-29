@@ -2,13 +2,25 @@
 <%- include ('../partials/header') %>
 <%- include ('../partials/menu') %>
 <main>
-    <center><h1 style="color: black;"><%=data.movie_name %></h1>  <!--Query-->
+    <center><h1 style="color: black;"><%= data.movie_name %></h1>  <!--Query-->
         <div class="card border-dark mb-3" style="width: 24rem;">
+
             <img src="<%= data.movie_image %>" class="card-img-top" alt="<%=data.movie_name %>"> 
-            <div class="d-grid gap-2 d-md-block">
-                <button class="btn btn-success" type="button">SKO</button>
-                <a><%= data.skono %></a> 
-                <button class="btn btn-danger" type="button">NO</button>
+            <div style="column-count: 3">
+                <form style="margin: 0" action="/sko" method="POST">
+                    <input type="hidden" name="movie_id" value="<%- data.movie_id %>">
+                    <button type="submit" class="btn " style="color: black; background-color: #cdb77c">
+                        Sko
+                    </button>
+                </form>
+                <h5>Score : <%- data.skono %></h5>
+                <form style="margin: 0" action="/no" method="POST">
+                    <input type="hidden" name="movie_id" value="<%- data.movie_id %>">
+                    <button type="submit" class="btn "
+                            style="color: #cdb77c ; background-color: black;object-fit: contain">
+                        No
+                    </button>
+                </form>
             </div>
             <div class="card-body" style="text-align: left;">
               <ul>
@@ -17,17 +29,54 @@
                 <li>Duration: <%= data.duration%> minutes</li> 
                 <li>Description: <%= data.description%></li>
               </ul>
+
             </div>
         </div>
-    <hr>
-    <div>
-        <section style="background-color: gold;">
-            <div class="container my-5 py-5">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-md-12 col-lg-10">
-                        <div class="card text-dark">
-                        <p class="fw-bold mb-4 pb-2">What your peers are saying</p>
+        <hr>
+        <div>
+            <section style="background-color: gold;">
+                <div class="container my-5 py-5">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-12 col-lg-10">
+                            <div class="card text-dark">
+                                <p class="fw-bold mb-4 pb-2">What your peers are saying</p>
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal">
+                                    Add a review
+                                </button>
 
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                     aria-labelledby="exampleModalLabel"
+                                     aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <label for="message-text"
+                                                               class="col-form-label">Thoughts on the movie?</label>
+                                                        <textarea class="form-control" id="message-text"></textarea>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                    Close
+                                                </button>
+                                                <button type="button" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             <% revs.forEach(el => { %>
                                 <div class="card-body p-4">
                                     <!--Example Comment-->
@@ -44,8 +93,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </div>
+            </section>
+        </div>
     </center>
 </main>
+<%- include ('../partials/footer') %>
