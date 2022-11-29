@@ -4,8 +4,7 @@
 <main>
     <center><h1 style="color: black;"><%= data.movie_name %></h1>  <!--Query-->
         <div class="card border-dark mb-3" style="width: 24rem;">
-
-            <img src="<%= data.movie_image %>" class="card-img-top" alt="<%=data.movie_name %>"> 
+            <img src="<%= data.movie_image %>" class="card-img-top" alt="Movie_title"> <!--Query-->
             <div style="column-count: 3">
                 <form style="margin: 0" action="/sko" method="POST">
                     <input type="hidden" name="movie_id" value="<%- data.movie_id %>">
@@ -23,13 +22,12 @@
                 </form>
             </div>
             <div class="card-body" style="text-align: left;">
-              <ul>
-                <li>Genre: <%= data.genre %></li> 
-                <li>Year of Release: <%= data.yearofrelease %> </li> 
-                <li>Duration: <%= data.duration%> minutes</li> 
-                <li>Description: <%= data.description%></li>
-              </ul>
-
+                <ul>
+                    <li>Genre: data</li> <!--Query-->
+                    <li>Year of Release: data</li> <!--Query-->
+                    <li>Duration: <%= data.duration %> minutes</li> <!--Query-->
+                    <li>Description: <%= data.description %></li>
+                </ul>
             </div>
         </div>
         <hr>
@@ -44,7 +42,6 @@
                                         data-target="#exampleModal">
                                     Add a review
                                 </button>
-
 
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
@@ -77,19 +74,44 @@
                                         </div>
                                     </div>
                                 </div>
-                            <% revs.forEach(el => { %>
+
                                 <div class="card-body p-4">
                                     <!--Example Comment-->
                                     <div class="d-flex flex-start">
-                                        <img class="rounded-circle shadow-1-strong me-3" src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt="avatar" width="60" height="60" />
+                                        <img class="rounded-circle shadow-1-strong me-3"
+                                             src="Circle-icons-profile.svg.png" alt="avatar" width="60" height="60"/>
                                         <div>
-                                            <h3 class="fw-bold" style="text-align: left;"> <%= el.username %> </h3>
-                                            <p class="mb-0"> <%= el.review_text %> </p>
+                                            <h3 class="fw-bold" style="text-align: left;">John Doe</h3>
+                                            <p class="mb-0">
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                industry. Lorem Ipsum has been the industry's standard dummy text ever
+                                                since the 1500s, when an unknown printer took a galley of type and
+                                                scrambled it.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
-                                <hr class="my-0" />
-                            <% }) %>
+                                <hr class="my-0"/>
+
+
+                                <div class="card-body p-4">
+                                    <!--Example Comment-->
+                                    <div class="d-flex flex-start">
+                                        <img class="rounded-circle shadow-1-strong me-3"
+                                             src="Circle-icons-profile.svg.png" alt="avatar" width="60" height="60"/>
+                                        <div>
+                                            <h3 class="fw-bold" style="text-align: left;">Frederick Jones</h3>
+                                            <p class="mb-0">
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                industry. Lorem Ipsum has been the industry's standard dummy text ever
+                                                since the 1500s, when an unknown printer took a galley of type and
+                                                scrambled it.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-0"/>
+                            </div>
                         </div>
                     </div>
                 </div>
