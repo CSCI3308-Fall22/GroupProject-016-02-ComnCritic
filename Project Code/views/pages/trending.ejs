@@ -19,7 +19,12 @@
                     <div class="card-body">
                       <h5 class="card-title"><%= el.movie_name %></h5>
                       <img src="<%= el.movie_image %>" class="card-img-top">
-                      <a href="#" class="btn btn-primary">Check Out This Movie</a>
+                      <form style="margin: 0" action="/getMovieInfo" method="GET">
+                        <input type="hidden" name="movie_id" value="<%-el.movie_id%>">
+                        <button type="submit" class="btn btn-primary" style="color: cornflowerblue; background-color: Black">
+                            Check Out This Movie
+                        </button>
+                    </form>
                     </div>
                   </div>
                 </div>
