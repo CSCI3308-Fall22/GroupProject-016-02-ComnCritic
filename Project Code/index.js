@@ -236,7 +236,7 @@ app.post('/addReview', function (req, res)  {
             db.any(`INSERT INTO reviews (username, movie_id, review_text)
                     VALUES ('${currentUser}', '${data[0].movie_id}', '${req.body.review}') returning *;`)
                 .then(function (rows)  {
-                    console.log(rows)
+                    console.log("Adding Review",rows);
                     res.redirect("/home");
                 })
                 .catch((err) => {
@@ -244,19 +244,27 @@ app.post('/addReview', function (req, res)  {
                     console.log(err);
 
                 });
-            // db.any(`INSERT INTO reviews (username,movie_id,review_text) VALUES ('${currentUser}','${data[0].movie_id}','${req.body.review}') returning *;`)
-            //     .then((rows) => {
-            //         console.log("Adding Review",rows);
-            //
-            //     })
-            //     .catch((err) => {
-            //         res.locals.message = "Something Went Wrong";
-            //         console.log(err);
-            //
-            //     });
         })
         .catch((err) => {
             res.locals.message = "Something Went Wrong";
+            console.log(err);
+
+        });
+});
+
+app.post('/addReviewModal', function (req, res) {
+    console.log("trying to add a review from a modal");
+    db.any(`INSERT INTO reviews (username, movie_id, review_text)
+            VALUES ('${currentUser}', '${req.body.movie_id}', '${req.body.reviewModal}') returning *;`)
+        .then(function (data) {
+            console.log("adding review");
+            res.locals.message = "Review Added";
+            res.locals.error = "success";
+            res.redirect("/home");
+        })
+        .catch((err) => {
+            res.locals.message = err;
+            res.locals.error = "danger";
             console.log(err);
 
         });
