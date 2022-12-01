@@ -59,3 +59,4 @@ INSERT INTO reviews (username, movie_id, review_text) values
 ('john doe', 49, 'I''ve seen better movies'),
 ('john doe', 46, 'Best movie ever');
 
+

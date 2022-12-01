@@ -71,11 +71,15 @@ app.post('/register', async (req, res) => {
     //the logic goes here
     const hash = await bcrypt.hash(req.body.password, 10);
     const query = `INSERT INTO users (username,password) VALUES ('${req.body.username}', '${hash}') returning *;`
-
-    db.any(query)
+    var regex = new RegExp ("^[A-Za-z0-9._%+-]+@colorado\.edu$" ) 
+    username = req.body.username
+    regex.test (username)
+    if (regex.test (username))
+    {
+        db.any(query)
         .then(() => {
             res.locals.message = "Account Created";
-        res.redirect("/login");
+            res.redirect("/login");
         })
         .catch((err) => {
             res.locals.error = "danger";
@@ -83,6 +87,18 @@ app.post('/register', async (req, res) => {
             console.log(err);
             res.redirect("/register");
         });
+    }
+    else 
+    {
+        res.locals.error = "danger";
+        res.locals.message = "Please use CU Email to Register"
+        res.render("pages/register.ejs", {
+            courses: [],
+            error: true,
+            message: res.locals.message,
+          });
+    }
+   
 });
 
 app.post('/login', async (req, res) => {
