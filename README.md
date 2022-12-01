@@ -11,8 +11,8 @@ James Hautekeete, Wesley Allen, Ben Calkins, Harpartap Salh, Laura Tang, Musaad 
 
 Technology Stack
 Front End: HTML, CSS, EJS
-Connected to Server through API calls
 Server: JS
+Connected Backend to Server through API calls
 Backend: SQL
 
 Prerequisites to run the application: Docker
