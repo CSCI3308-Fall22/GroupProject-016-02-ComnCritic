@@ -30,7 +30,6 @@ CREATE TABLE reviews
     review_id   SERIAL PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
     movie_id INT NOT NULL,
-
     FOREIGN KEY (username) REFERENCES users(username),
     FOREIGN KEY (movie_id) REFERENCES movies(movie_id),
     review_text VARCHAR(1000) NOT NULL
