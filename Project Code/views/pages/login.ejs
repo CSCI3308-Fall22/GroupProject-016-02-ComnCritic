@@ -6,6 +6,9 @@
 </style>
 <main>
     <div class="container">
+        <% if (locals.message) { %>
+            <div class="alert alert-danger" role="alert">Please use CU Email </div>
+            <% } %>
         <form action="/login" method="POST">
             <div class="form-group">
                 <label for="username">Username</label>

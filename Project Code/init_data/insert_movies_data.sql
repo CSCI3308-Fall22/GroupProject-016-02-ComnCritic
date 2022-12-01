@@ -50,12 +50,5 @@ insert into movies (movie_id, movie_name, movie_image, duration, genre, yearOfRe
 (49, 'Blonde', 'https://m.media-amazon.com/images/I/71rBInPKIWL._RI_.jpg', 167, 'Drama', 2022, 'A fictionalized chronicle of the inner life of Marilyn Monroe.', 0),
 (50, 'Ticket to Paradise', 'https://m.media-amazon.com/images/I/51n3ZKl+9HL._AC_SY580_.jpg', 104, 'Comedy', 2022, 'A divorced couple teams up and travels to Bali to stop their daughter from making the same mistake they think they made 25 years ago.', 0);
 
-INSERT INTO users (username, password) values
-('john doe', 'jdjd');
 
-
-INSERT INTO reviews (review_id, username, movie_id, review_text) values
-(1, 'john doe', 49, 'I loved the movie!!!'),
-(2, 'john doe', 49, 'I''ve seen better movies'),
-(3, 'john doe', 46, 'Best movie ever');
 
